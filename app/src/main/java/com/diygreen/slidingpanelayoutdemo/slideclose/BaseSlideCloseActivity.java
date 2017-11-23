@@ -53,7 +53,6 @@ public class BaseSlideCloseActivity extends AppCompatActivity implements
 
             ViewGroup decorView = (ViewGroup) getWindow().getDecorView();
 
-
             // 右侧的内容视图
             ViewGroup decorChild = (ViewGroup) decorView.getChildAt(0);
             decorChild.setBackgroundColor(getResources()
