@@ -4,8 +4,11 @@
 package com.diygreen.slidingpanelayoutdemo.simple;
 
 import android.app.Fragment;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.ContentLoadingProgressBar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +34,11 @@ public class RightContentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_rightcontent, container, false);
         mContentTV = (TextView) view.findViewById(R.id.tv_content);
+
+        ContentLoadingProgressBar progressBar=view.findViewById(R.id.progressBar);
+        progressBar.getIndeterminateDrawable()
+                .setColorFilter(ContextCompat.getColor(getActivity(),R.color.colorPrimary),
+                        PorterDuff.Mode.MULTIPLY);
         return view;
     }
 
